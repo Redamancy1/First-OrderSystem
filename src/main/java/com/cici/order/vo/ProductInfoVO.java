@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 /**
  * TODO
- * 商品详情
+ * 商品详情信息
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

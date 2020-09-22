@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * TODO
- * 商品分类表实体
+ *  商品类目实体
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
@@ -25,10 +25,13 @@ public class ProductCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
+
     private String categoryName;
+
     private Integer categoryType;
 
     private Date createTime;
+
     private Date updateTime;
 
 

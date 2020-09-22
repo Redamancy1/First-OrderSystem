@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * TODO
- *
+ * 商品类目概要信息
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

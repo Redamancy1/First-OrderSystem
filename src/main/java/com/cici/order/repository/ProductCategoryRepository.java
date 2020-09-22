@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * TODO
- *  商品分类表的 repository
+ *  商品类目 repository
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
