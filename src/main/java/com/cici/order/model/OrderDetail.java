@@ -8,30 +8,28 @@ import java.math.BigDecimal;
 
 /**
  * TODO
- *  商品对象实体
+ *  订单详细信息
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
  */
 @Entity
 @Data
-public class ProductInfo {
+public class OrderDetail {
 
     @Id
+    private String detailId;
+
+    private String orderId;
+
     private String productId;
 
     private String productName;
 
     private BigDecimal productPrice;
 
-    private Integer productStock;
-
-    private String productDescription;
+    //商品数量
+    private Integer productQuantity;
 
     private String productIcon;
-
-    private Integer productStatus;
-
-    private Integer categoryType;
-
 }
