@@ -85,7 +85,8 @@ public class SellerUserController {
         }
 
         map.put("msg",ResultEnum.LOGOUT_SUCCESS.getMessage());
-        map.put("url","/sell/seller/order/list");
+        //登录出后重新跳转到登录验证界面，后续有开发平台账号再修改跳到二维码扫描界面
+        map.put("url","/sell/seller/main");
         return new ModelAndView("common/success",map);
 
     }
