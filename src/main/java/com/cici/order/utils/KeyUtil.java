@@ -3,8 +3,8 @@ package com.cici.order.utils;
 import java.util.Random;
 
 /**
- * TODO
- *  随机生成号码工具类
+ * 随机生成号码工具类
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
@@ -23,6 +23,8 @@ public class KeyUtil {
 
         return System.currentTimeMillis() + String.valueOf(number);
     }
+
+
 
 
 }

@@ -11,8 +11,8 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * TODO
- *  商品类目实体
+ * 商品类目实体
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

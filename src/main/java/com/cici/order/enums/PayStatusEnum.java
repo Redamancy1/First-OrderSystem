@@ -3,17 +3,17 @@ package com.cici.order.enums;
 import lombok.Getter;
 
 /**
- * TODO
- *  支付状态枚举
+ * 支付状态枚举
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
  */
 @Getter
-public enum PayStatusEnum {
+public enum PayStatusEnum implements CodeEnum{
 
-    WAIT(0,"待支付"),
-    SUCCESS(1,"已支付");
+    WAIT(0,"等待支付"),
+    SUCCESS(1,"支付成功");
 
     private Integer code;
     private String message;

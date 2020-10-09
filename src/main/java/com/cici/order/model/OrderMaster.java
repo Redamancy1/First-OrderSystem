@@ -11,8 +11,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * TODO
- *  订单主表实体-包含多个订单详情
+ * 订单主表实体-包含多个订单详情
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

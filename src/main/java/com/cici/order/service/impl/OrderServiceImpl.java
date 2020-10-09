@@ -13,7 +13,9 @@ import com.cici.order.model.ProductInfo;
 import com.cici.order.repository.OrderDetailRepository;
 import com.cici.order.repository.OrderMasterRepository;
 import com.cici.order.service.OrderService;
+import com.cici.order.service.PayService;
 import com.cici.order.service.ProductService;
+import com.cici.order.service.PushMessageService;
 import com.cici.order.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -51,6 +53,14 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMasterRepository orderMasterRepository;
 
+    @Autowired
+    private PayService payService;
+
+    @Autowired
+    private PushMessageService pushMessageService;
+
+    @Autowired
+    private WebSocket webSocket;
 
 
     @Override
@@ -97,6 +107,9 @@ public class OrderServiceImpl implements OrderService {
                 new CartDTO(e.getProductId(),e.getProductQuantity()))
                 .collect(Collectors.toList());
         productService.decreaseStock(cartDTOList);
+
+        //发送 websocket 消息
+        webSocket.sendMessage(orderDTO.getOrderId());
 
         return orderDTO;
     }
@@ -161,7 +174,8 @@ public class OrderServiceImpl implements OrderService {
 
         //若支付过，需要退款
         if(orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())){
-            //TODO
+           //只要收到退款号，就是退款成功，退款需要排队
+            payService.refund(orderDTO);
         }
 
         return orderDTO;
@@ -185,6 +199,10 @@ public class OrderServiceImpl implements OrderService {
             log.error("【完成订单】更新失败，orderMaster={}",orderMaster);
             throw new SellException(ResultEnum.ORDER_UPDATE_FAIL);
         }
+
+        //推送微信模板消息
+//        pushMessageService.orderStatus(orderDTO);
+
         return orderDTO;
     }
 
@@ -214,5 +232,14 @@ public class OrderServiceImpl implements OrderService {
         }
 
         return orderDTO;
+    }
+
+    @Override
+    public Page<OrderDTO> findList(Pageable pageable) {
+        Page<OrderMaster> orderMasterPage = orderMasterRepository.findAll(pageable);
+
+        List<OrderDTO> orderDTOList = OrderMaster2OrderDTOConverter.convert(orderMasterPage.getContent());
+
+        return new PageImpl<OrderDTO>(orderDTOList,pageable,orderMasterPage.getTotalElements());
     }
 }

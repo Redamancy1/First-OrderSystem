@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * TODO
- *  商品类目 repository
+ * 商品类目 repository
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

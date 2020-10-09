@@ -3,17 +3,17 @@ package com.cici.order.enums;
 import lombok.Getter;
 
 /**
- * TODO
- *  商品对象状态枚举
+ * 商品对象状态枚举
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
  */
 @Getter
-public enum ProductStatusEnum {
+public enum ProductStatusEnum implements CodeEnum{
 
-    UP(0,"ON-SALE"),
-    DOWN(1,"NO-SALE");
+    UP(0,"在架"),
+    DOWN(1,"下架");
 
     private Integer code;
     private String message;

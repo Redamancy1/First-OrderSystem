@@ -3,8 +3,8 @@ package com.cici.order.dto;
 import lombok.Data;
 
 /**
- * TODO
- *  购物车 DTO 对象
+ * 购物车 DTO 对象
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
