@@ -23,22 +23,22 @@ server:
 
 wechat:
   # 公众号平台，授权
-  mpAppId: wxa213ec9b2b608f08
-  mpAppSecret: d08229baa7b17cb79ec68c220c3d6491
+  mpAppId:
+  mpAppSecret:
 
   # 微信开放平台
-  openAppId: wx6ad144e54af67d87
-  openAppSecret: 91a2dd6s38a2bbccfb7e9
+  openAppId:
+  openAppSecret:
 
   # 支付/商户号
-  mchId: 1589578581
-  mchKey: 4991ebc3a4b34db7780a0b7eda3bf079
+  mchId:
+  mchKey:
   # 发起支付不需要证书, 退款需要
   keyPath: E:\MyLog\weixin_cert\h5.p12
   # 微信支付异步回调地址
   notifyUrl: http://cici88.natapp1.cc/sell/pay/notify
   templateId:
-    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
+    orderStatus:
 
 projecturl:
   wechatMpAuthorize: http://cici88.natapp1.cc
