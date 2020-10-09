@@ -5,8 +5,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 /**
- * TODO
- *  订单操作接口
+ * 订单操作接口
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
@@ -30,4 +30,7 @@ public interface OrderService {
 
     //支付订单
     OrderDTO paid(OrderDTO orderDTO);
+
+    //查询订单列表-卖家
+    Page<OrderDTO> findList(Pageable pageable);
 }

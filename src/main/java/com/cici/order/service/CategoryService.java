@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * TODO
- *  商品类目功能接口
+ * 商品类目功能接口
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

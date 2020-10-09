@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * TODO
+ * 订单详情 repository
  *
  * @author Redamancy
  * @version 1.0

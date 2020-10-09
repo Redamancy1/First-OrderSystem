@@ -1,5 +1,6 @@
 package com.cici.order.service.impl;
 
+import com.cici.order.enums.ProductStatusEnum;
 import com.cici.order.model.ProductInfo;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -63,5 +64,17 @@ class ProductServiceImplTest {
         productInfo.setCategoryType(2);
         ProductInfo result = productService.save(productInfo);
         Assert.assertNotNull(result);
+    }
+
+    @Test
+    public void onSale(){
+        ProductInfo result = productService.onSale("221314");
+        Assert.assertEquals(ProductStatusEnum.UP,result.getProductStatusEnum());
+    }
+
+    @Test
+    public void offSale(){
+        ProductInfo result = productService.offSale("221314");
+        Assert.assertEquals(ProductStatusEnum.DOWN,result.getProductStatusEnum());
     }
 }

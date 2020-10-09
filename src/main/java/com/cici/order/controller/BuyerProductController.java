@@ -10,6 +10,7 @@ import com.cici.order.vo.ProductVO;
 import com.cici.order.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * TODO
- *  买家对商品的操作接口
+ * 商品相关操作接口
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8
@@ -36,6 +37,7 @@ public class BuyerProductController {
     private CategoryService categoryService;
 
     @GetMapping("/list")
+    @Cacheable(cacheNames = "product",key = "123")
     public ResultVO list(){
 
         //1.查询所有的上架商品
@@ -79,5 +81,4 @@ public class BuyerProductController {
         //通过工具类将最终结果返回给http请求
         return ResultVOUtil.success(productVOList);
     }
-
 }

@@ -7,8 +7,8 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
- * TODO
- *  订单详细信息
+ * 订单详细信息
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

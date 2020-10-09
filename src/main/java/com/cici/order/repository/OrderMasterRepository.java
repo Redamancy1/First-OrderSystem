@@ -6,8 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * TODO
- *  订单主表信息 repository
+ * 订单主表信息 repository
+ *
  * @author Redamancy
  * @version 1.0
  * @since jdk 1.8

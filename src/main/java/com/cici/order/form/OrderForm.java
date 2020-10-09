@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * TODO
+ * 前端提交 order 数据表单
  *
  * @author Redamancy
  * @version 1.0
