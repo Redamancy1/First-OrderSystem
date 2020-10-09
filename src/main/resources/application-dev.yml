@@ -1,0 +1,58 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.80.136/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+  freemarker:
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+
+  redis:
+    host: 192.168.80.136
+    port: 6379
+
+server:
+  servlet:
+    context-path: /sell
+
+wechat:
+  # 公众号平台，授权
+  mpAppId:
+  mpAppSecret:
+
+  # 微信开放平台
+  openAppId:
+  openAppSecret:
+
+  # 支付/商户号
+  mchId:
+  mchKey:
+  # 发起支付不需要证书, 退款需要
+  keyPath: E:\MyLog\weixin_cert\h5.p12
+  # 微信支付异步回调地址
+  notifyUrl: http://cici88.natapp1.cc/sell/pay/notify
+  templateId:
+    orderStatus:
+
+projecturl:
+  wechatMpAuthorize: http://cici88.natapp1.cc
+  wechatOpenAuthorize: http://cici88.natapp1.cc
+  sell: http://cici88.natapp1.cc
+
+
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  file:
+    path: E:\MyLog\log\tomcat
+  level:
+    com.cici.order.model.mapper: trace
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
